@@ -1,4 +1,5 @@
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -6,22 +7,12 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        String filePath = null;
+        String file1 = fileReader.readFileToString("random.csv");
 
-
-
-        List<String> readInLines = new ArrayList<>();
-
-        FileReader readFile = new FileReader("random.csv");
-        BufferedReader read = new BufferedReader(readFile);
-        String row = null;
-        while ((row = read.readLine()) != null){
-            System.out.println(row);
-        }
+        System.out.println(file1);
 
 
 
 
-
-        }
     }
+}
