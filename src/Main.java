@@ -1,5 +1,4 @@
 import java.io.*;
-import java.sql.SQLOutput;
 import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -13,7 +12,8 @@ public class Main {
         List file2 = fileReader.readFileToList("random.csv");
         System.out.println(file2);
 
-
+        HashMap<String, String> file3 = fileReader.readFileToHashMap("users.csv");
+        System.out.println(file3);
 
     }
 }
