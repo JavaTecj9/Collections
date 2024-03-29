@@ -25,8 +25,31 @@ public class fileReader {
         return line;
     }
 
-    public static HashMap readFileToHashMap (String filePath){
+    public static List<String> readFileToList (String filePath){
+        //Create ListArray to store lines from the file
+        List<String> readArray = new ArrayList<String>();
 
+        try(
+                //Create FileReader instance "fileReader" pass in file path variable
+                FileReader fileReader = new FileReader(filePath);
+                //Create BufferReader wrapper instance, pass in "fileReader" instance variable
+                BufferedReader br = new BufferedReader(fileReader)) {
+                //create string to take one line at a time in the loop
+                String line = null;
+                //Loop to read file. .readLine() is a method of BufferedReader to read file one line at a time
+                while ((line = br.readLine()) != null){
+                    readArray.add(line);
+                }
+        }
+        //Catch Exception
+        catch (FileNotFoundException e) {
+            System.out.println("File Not found!");;
+        }
+        //Catch Exception
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        } ;
+        return readArray;
     }
 
 }

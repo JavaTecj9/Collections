@@ -8,9 +8,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         String file1 = fileReader.readFileToString("random.csv");
+        System.out.println(file1 + "\n");
 
-        System.out.println(file1);
-
+        List file2 = fileReader.readFileToList("random.csv");
+        System.out.println(file2);
 
 
 
